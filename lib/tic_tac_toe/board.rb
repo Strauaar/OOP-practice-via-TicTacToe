@@ -1,3 +1,5 @@
+require_relative "cell.rb"
+
 module TicTacToe
   class Board
     attr_reader :grid
@@ -17,6 +19,12 @@ module TicTacToe
       return :winner if winner?
       return :draw if draw?
       false
+    end
+
+    def formatted_grid
+      grid.each do |row|
+        puts row.map { |cell| cell.value.empty? ? "_": cell.value }.join(" ")
+      end
     end
 
     private

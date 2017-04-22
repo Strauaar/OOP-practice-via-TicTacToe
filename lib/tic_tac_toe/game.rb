@@ -1,4 +1,4 @@
-require "tic_tac_toe/board"
+require_relative "board.rb"
 module TicTacToe
   class Game
     attr_reader :players, :board, :current_player, :other_player
@@ -25,7 +25,7 @@ module TicTacToe
       return "The game ended in a tie" if board.game_over == :draw
     end
 
-    def player
+    def play
       puts "#{current_player.name} has been randomly selected as the first player"
       while true
         board.formatted_grid
